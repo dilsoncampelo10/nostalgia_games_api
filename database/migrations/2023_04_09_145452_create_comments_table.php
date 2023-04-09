@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 200);
-            $table->text('description');
-            $table->integer('rating')->nullable();
-            $table->string('console', 100);
-            $table->string('cover')->default('game.jpg');
+            $table->text('comment');
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignId('game_id')->references('id')->on('games')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('comments');
     }
 };

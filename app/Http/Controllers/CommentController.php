@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Game;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class GameController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,13 @@ class GameController extends Controller
         //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -27,7 +34,7 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Game $game)
+    public function show(Comment $comment)
     {
         //
     }
@@ -35,7 +42,15 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Game $game)
+    public function edit(Comment $comment)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -43,7 +58,7 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Game $game)
+    public function destroy(Comment $comment)
     {
         //
     }
